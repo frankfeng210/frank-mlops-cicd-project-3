@@ -14,19 +14,19 @@ def main():
 
     mlflow.start_run()                                                  # Starting the MLflow experiment run
 
-    print(f"Best-trained-model-name: {args.model}")
+    print(f"Best-trained-model-name: {Path(args.model)}")
 
     # Load the trained model from the provided path
-    #sk_model = mlflow.sklearn.load_model(Path(args.model))
-    sk_model = mlflow.sklearn.load_model(args.model)
+    sk_model = mlflow.sklearn.load_model(Path(args.model))
+    #sk_model = mlflow.sklearn.load_model(args.model)
 
     print("Registering the best trained prediction model for used cars price prediction")
 
     # Register the model in the MLflow Model Registry under the name "used_cars_price_prediction_model"
     mlflow.sklearn.log_model(
-        sk_model=sk_model,
-        registered_model_name="used_cars_price_prediction_model",       # Descriptive model name for registration
-        artifact_path="random_forest_price_regressor"                   # Path to store model artifacts
+            sk_model=sk_model,
+            registered_model_name="used_cars_price_prediction_model",   
+            artifact_path="random_forest_price_regressor"
     )
 
     # End the MLflow run
