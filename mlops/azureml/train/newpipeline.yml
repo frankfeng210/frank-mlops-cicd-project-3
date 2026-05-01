@@ -1,8 +1,8 @@
 $schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
 type: pipeline
-display_name: Pipeline-for-data-preparation-training-prediction-and-model-registration  # Provide the display name for the pipeline
-experiment_name: Random-Forest-Regressor-For-Used-Car-Pricing-Prediction # Provide the experiment name
-description: Pipeline-for-data-preparation-training-prediction-and-model-registration # Provide the description for the pipeline
+display_name: used_car_pricing_model_pipeline  # Provide the display name for the pipeline
+experiment_name: ssed-car-pricing-model        # Provide the experiment name
+description: Used car pricing data preparation, training, and model registration # Provide the description for the pipeline
 
 inputs:
   raw_data:
