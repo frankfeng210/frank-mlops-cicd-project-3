@@ -1,8 +1,4 @@
 
-###################################################
-# train regression model without parameter tuning #
-###################################################
-
 # Required imports for training
 import mlflow
 import argparse
@@ -15,7 +11,6 @@ from pathlib import Path
 
 model_output_dir = "./outputs"
 os.makedirs(model_output_dir, exist_ok=True)        # Create the "outputs" directory if it doesn't exist
-model_path = os.path.abspath(model_output_dir)
 
 def select_first_file(path):
     """Selects the first file in a folder, assuming there's only one file.
@@ -82,7 +77,7 @@ def main():
 
     # 7. Output the trained model
     mlflow.sklearn.save_model(regressor1, args.model_output)    # args.model_output: must NOT exist, mflow will create one
-    #mlflow.sklearn.save_model(regressor1, model_path) 
+    print(f"Model Location: {args.model_output}")
 
     mlflow.end_run()                                    # Ending the MLflow experiment run
 
