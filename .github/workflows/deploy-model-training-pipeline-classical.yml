@@ -1,7 +1,8 @@
 name: deploy-model-training-pipeline
 
 on:
-  push:
+  #push:
+   workflow_dispatch:
     branches:
       - main
   pull_request:
