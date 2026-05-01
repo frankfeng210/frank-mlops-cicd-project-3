@@ -1,8 +1,8 @@
 $schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
 type: pipeline
-display_name: ________-_________-___________  # Provide the display name for the pipeline
-experiment_name: ________-________-__________  # Provide the experiment name
-description: ____________-__________-______-____________-______  # Provide the description for the pipeline
+display_name: Pipeline-for-data-preparation-training-prediction-and-model-registration  # Provide the display name for the pipeline
+experiment_name: Random-Forest-Regressor-For-Used-Car-Pricing-Prediction # Provide the experiment name
+description: Pipeline-for-data-preparation-training-prediction-and-model-registration # Provide the description for the pipeline
 
 inputs:
   raw_data:
@@ -67,13 +67,13 @@ jobs:
       max_concurrent_trials: 10
       timeout: 7200
 
-
   register_model:
-    name: _________  # Provide the job name
-    display_name: ________-_______  # Provide the display name for the job
-    code: ../../../data-science/src
+    name: register_used_car_pricing_prediction_model          # Provide the job name
+    display_name: register-used-car-pricing-prediction-model  # Provide the display name for the job
+    #code: ../../../data-science/src
+    code: ../../../model_register
     command: >-
-      python register.py 
+      python model_register.py 
       --model_name ${{inputs.model_name}} 
       --model_path ${{inputs.model_path}} 
       --model_info_output_path ${{outputs.model_info_output_path}}
