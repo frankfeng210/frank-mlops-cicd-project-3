@@ -1,7 +1,7 @@
 $schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
 
-name: sklearn-env-used-cars-train               # Provide the name for the environment
+name: sklearn-used-cars-training-env               # Provide the name for the environment
 image: mcr.microsoft.com/azureml/openmpi3.1.2-ubuntu18.04
 #conda_file: ../../../data-science/environment/train-conda.yml
 conda_file: ../../../env/conda.yml
-description: used-cars-train-env                # Provide the name for the environment
+description: Environment created from Docker image and conda env to train used card pricing model  # Provide the name for the environment
